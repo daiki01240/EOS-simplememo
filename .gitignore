@@ -1,0 +1,5 @@
+build/*
+!build/simplememo/.keep
+eos-wallet/*
+!eos-wallet/.keep
+nodeos_data/
