@@ -13,7 +13,7 @@ class Simplememo : public contract {
       /// @abi action
       void version()
       {
-          print("simplememo version  0.01");
+          print("simplememo version  0.02");
       };
 
       /// @abi action
@@ -34,6 +34,16 @@ class Simplememo : public contract {
           print(content);
       };
 
+      // @abi action
+      void deletememo(uint64_t index)
+      {
+          auto memo = _memos.find(index);
+          if (memo != _memos.end())
+          {
+            _memos.erase(memo);
+          }
+      };
+
   private:
     // create the multi index tables to store the data
 
@@ -51,5 +61,5 @@ class Simplememo : public contract {
       memos _memos;
 };
 
-EOSIO_ABI( Simplememo, (version)(addmemo)(readmemo))
+EOSIO_ABI( Simplememo, (version)(addmemo)(readmemo)(deletememo))
 

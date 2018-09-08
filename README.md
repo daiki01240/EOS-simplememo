@@ -28,3 +28,7 @@ cleos -u http://nodeos:8888 set contract simplememo build/simplememo -p simpleme
 cleos -u http://nodeos:8888 push action simplememo addmemo '["hello"]' -p eosio@active 
 cleos -u http://nodeos:8888 push action simplememo readmemo '[1]' -p eosio@active 
 ```
+
+### misc
+
+Use 'https://api-kylin.eosasia.one' instead of 'http://nodeos:8888' if you want to use testnet.
